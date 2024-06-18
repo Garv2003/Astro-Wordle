@@ -6,6 +6,7 @@ const STATE_MAP: Record<LetterState, number> = {
   correct: 0,
   "wrong-place": 1,
   wrong: 2,
+  empty: 3,
 };
 
 function positionsToValues(
