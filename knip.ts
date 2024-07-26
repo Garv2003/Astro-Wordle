@@ -1,9 +1,7 @@
-import compile from "@mdx-js/mdx"; // Use v1
-
 export default {
   compilers: {
-    astro: (text: string) => [...text.matchAll(/import[^;]+/g)].join("\n"),
-    css: (text: string) => [...text.matchAll(/(?<=@)import[^;]+/g)].join("\n"),
+    astro: (text: string) => Array.from(text.matchAll(/import[^;]+/g)).join("\n"),
+    css: (text: string) => Array.from(text.matchAll(/(?<=@)import[^;]+/g)).join("\n"),
   },
   entry: ["src/pages/*.{js,cjs,mjs,jsx,ts,cts,mts,tsx,astro}"],
   project: [
